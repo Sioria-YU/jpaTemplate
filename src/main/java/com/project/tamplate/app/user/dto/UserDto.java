@@ -1,9 +1,7 @@
 package com.project.tamplate.app.user.dto;
 
-import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Comment;
 
 public class UserDto {
 
