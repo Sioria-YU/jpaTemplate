@@ -2,50 +2,51 @@ package com.project.tamplate.app.user.entity;
 
 import com.common.DefaultJpaIdWithDate;
 import com.sun.istack.NotNull;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import org.hibernate.annotations.Comment;
+import lombok.Getter;
 
 import javax.persistence.Entity;
 
-@Data
+@Getter
 @Entity
 public class User extends DefaultJpaIdWithDate {
 
+    @ApiModelProperty(value = "사용자 아이디", required = true)
     @NotNull
-    @Comment("사용자 아아디")
     String userId;
 
-    @Comment("사용자 비밀번호")
+    @ApiModelProperty(value = "사용자 비밀번호", required = true)
     String password;
 
-    @Comment("사용자 이름")
+    @ApiModelProperty(value = "사용자 이름", required = true)
     String name;
 
-    @Comment("사용자 성별")
+    @ApiModelProperty(value = "사용자 성별", required = true)
     Boolean gender;
 
-    @Comment("사용자 전화번호")
+    @ApiModelProperty(value = "사용자 전화번호", required = true)
     String tell;
 
-    @Comment("사용자 이메일")
+    @ApiModelProperty(value = "사용자 이메일", required = true)
     String email;
 
-    @Comment("사용자 우편번호")
+    @ApiModelProperty(value = "사용자 우편번호", required = true)
     String zip;
 
-    @Comment("사용자 주소")
+    @ApiModelProperty(value = "사용자 주소", required = true)
     String address;
 
-    @Comment("사용자 주소 상세")
+    @ApiModelProperty(value = "사용자 주소 상세", required = true)
     String addressDetail;
 
-    @Comment("사용자 상태")
+    @ApiModelProperty(value = "사용자 상태", required = true)
     Boolean status;
 
-    @Comment("사용자 삭제여부")
+    @ApiModelProperty(value = "사용자 삭제여부", required = true)
     Boolean isDelete;
 
-    @Comment("사용자 권한타입")
+    @ApiModelProperty(value = "사용자 권한타입", required = true)
     Boolean authType;
 
 
