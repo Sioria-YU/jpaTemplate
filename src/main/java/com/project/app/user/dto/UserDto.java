@@ -1,12 +1,11 @@
-package com.project.tamplate.app.user.dto;
+package com.project.app.user.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 public class UserDto {
 
-    @Getter
-    public class Response {
+    @Data
+    public static class Response {
         String userId;
 
         String password;
@@ -32,8 +31,8 @@ public class UserDto {
         Boolean authType;
     }
 
-    @Setter
-    public class Create {
+    @Data
+    public static class Create {
         String userId;
 
         String password;

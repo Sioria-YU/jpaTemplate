@@ -1,7 +1,8 @@
-package com.project.tamplate.app.user.controller;
+package com.project.app.user.controller;
 
-import com.project.tamplate.app.user.entity.User;
-import com.project.tamplate.app.user.service.UserService;
+import com.project.app.user.dto.UserDto;
+import com.project.app.user.entity.User;
+import com.project.app.user.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class UserController {
 
     @ApiOperation(value = "사용자 조회", notes = "사용자 조회 api")
     @GetMapping(value="/{id}")
-    public ResponseEntity<User> getUsers(@PathVariable Long id){
+    public ResponseEntity<UserDto.Response> getUsers(@PathVariable Long id){
         return ResponseEntity.ok(userService.findUser(id));
     }
 }

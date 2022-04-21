@@ -1,6 +1,8 @@
-package com.project.tamplate.app.user.entity;
+package com.project.app.user.entity;
 
 import com.common.DefaultJpaIdWithDate;
+import com.project.app.user.dto.UserDto;
+import com.project.app.user.resource.UserMapper;
 import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -49,5 +51,7 @@ public class User extends DefaultJpaIdWithDate {
     @ApiModelProperty(value = "사용자 권한타입", required = true)
     Boolean authType;
 
-
+    public UserDto.Response toResponse(){
+        return UserMapper.mapper.toDto(this);
+    }
 }
