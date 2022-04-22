@@ -8,7 +8,7 @@ public class UserDto {
     public static class Response {
         String userId;
 
-        String password;
+//        String password;
 
         String name;
 
