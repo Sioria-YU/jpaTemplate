@@ -1,7 +1,7 @@
 package com.project.app.user.resource;
 
 
-import com.common.EntityMapper;
+import com.project.common.EntityMapper;
 import com.project.app.user.dto.UserDto;
 import com.project.app.user.entity.User;
 import org.mapstruct.Mapper;

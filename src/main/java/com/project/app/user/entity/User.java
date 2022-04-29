@@ -1,11 +1,10 @@
 package com.project.app.user.entity;
 
-import com.common.DefaultJpaIdWithDate;
+import com.project.common.DefaultJpaIdWithDate;
 import com.project.app.user.dto.UserDto;
 import com.project.app.user.resource.UserMapper;
 import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 import lombok.Getter;
 
 import javax.persistence.Entity;
@@ -16,40 +15,40 @@ public class User extends DefaultJpaIdWithDate {
 
     @ApiModelProperty(value = "사용자 아이디", required = true)
     @NotNull
-    String userId;
+    private String userId;
 
     @ApiModelProperty(value = "사용자 비밀번호", required = true)
-    String password;
+    private String password;
 
     @ApiModelProperty(value = "사용자 이름", required = true)
-    String name;
+    private String name;
 
     @ApiModelProperty(value = "사용자 성별", required = true)
-    Boolean gender;
+    private Boolean gender;
 
     @ApiModelProperty(value = "사용자 전화번호", required = true)
-    String tell;
+    private String tell;
 
     @ApiModelProperty(value = "사용자 이메일", required = true)
-    String email;
+    private String email;
 
     @ApiModelProperty(value = "사용자 우편번호", required = true)
-    String zip;
+    private String zip;
 
     @ApiModelProperty(value = "사용자 주소", required = true)
-    String address;
+    private String address;
 
     @ApiModelProperty(value = "사용자 주소 상세", required = true)
-    String addressDetail;
+    private String addressDetail;
 
     @ApiModelProperty(value = "사용자 상태", required = true)
-    Boolean status;
+    private Boolean status;
 
     @ApiModelProperty(value = "사용자 삭제여부", required = true)
-    Boolean isDelete;
+    private Boolean isDelete;
 
     @ApiModelProperty(value = "사용자 권한타입", required = true)
-    Boolean authType;
+    private Boolean authType;
 
     public UserDto.Response toResponse(){
         return UserMapper.mapper.toDto(this);

@@ -1,4 +1,4 @@
-package com.config;
+package com.project.config;
 
 public class AppConfig {
 }

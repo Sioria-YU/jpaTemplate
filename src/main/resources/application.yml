@@ -34,5 +34,11 @@ spring:
     devtools:
         livereload:
             enabled: true
+    security:
+        user:
+            name: admin
+            password: 1234
 server:
     port: 8080
+jwt:
+    key: 12345678901234567890123456789012
