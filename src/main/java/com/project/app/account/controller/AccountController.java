@@ -1,7 +1,7 @@
-package com.project.app.user.controller;
+package com.project.app.account.controller;
 
-import com.project.app.user.dto.UserDto;
-import com.project.app.user.service.UserService;
+import com.project.app.account.dto.AccountDto;
+import com.project.app.account.service.AccountService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = {"사용자"})
 @RequestMapping(value = "/api/user")
 @RequiredArgsConstructor
-public class UserController {
+public class AccountController {
 
-    private final UserService userService;
+    private final AccountService userService;
 
     @ApiOperation(value = "사용자 조회", notes = "사용자 조회 api")
     @GetMapping(value="/{id}")
-    public ResponseEntity<UserDto.Response> getUsers(@PathVariable Long id){
+    public ResponseEntity<AccountDto.Response> getUsers(@PathVariable Long id){
         return ResponseEntity.ok(userService.findUser(id));
     }
 }

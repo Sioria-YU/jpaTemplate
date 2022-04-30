@@ -1,8 +1,8 @@
-package com.project.app.user.dto;
+package com.project.app.account.dto;
 
 import lombok.Data;
 
-public class UserDto {
+public class AccountDto {
 
     @Data
     public static class Response {

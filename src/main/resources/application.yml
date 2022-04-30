@@ -41,4 +41,4 @@ spring:
 server:
     port: 8080
 jwt:
-    key: 12345678901234567890123456789012
+    secret: eyJhbGciOiJIUzUxMiJ9.eyJSb2xlIjoiUk9MRV9BRE1JTiIsIklzc3VlciI6Iklzc3VlciIsIlVzZXJuYW1lIjoiYWRtaW4iLCJleHAiOjE2NTEyOTcyNTgsImlhdCI6MTY1MTI5NzI1OH0.1ZecsIIq2bskKdrxGAZd4tRdpoSnhfyCK8tt4lzyt6imq7NyOwMenrwvxZzAREYqy7DcmX0G8ffkhAuIRRwg-w

@@ -1,0 +1,33 @@
+package com.project.app.account.service;
+
+import com.project.app.account.dto.AccountDto;
+import com.project.app.account.entity.Account;
+import com.project.app.account.entity.UserDetail;
+import com.project.app.account.resource.AccountRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@RequiredArgsConstructor
+@Transactional(readOnly = true)
+public class AccountService {
+
+    public final AccountRepository userRepository;
+
+    public AccountDto.Response findUser(Long id){
+        Account user = userRepository.findById(id).orElseThrow(NullPointerException::new);
+
+        return user.toResponse();
+    }
+
+    public UserDetails findUserByUserId(String userId) {
+        UserDetail userDetail = new UserDetail();
+        Account user = userRepository.findByUserId(userId).orElseThrow(NullPointerException::new);
+
+        userDetail.setUsername(user.getUserId());
+
+        return userDetail;
+    }
+}
