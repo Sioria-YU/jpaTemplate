@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @Api(tags = {"사용자"})
-@RequestMapping(value = "/api/user")
+@RequestMapping(value = "/api/account")
+@RestController
 @RequiredArgsConstructor
 public class AccountController {
 
@@ -24,4 +24,11 @@ public class AccountController {
     public ResponseEntity<AccountDto.Response> getUsers(@PathVariable Long id){
         return ResponseEntity.ok(userService.findUser(id));
     }
+
+    @ApiOperation(value = "사용자 정보 아이디로 조회", notes = "사용자 조회 api")
+    @GetMapping(value="/{userId}")
+    public ResponseEntity<AccountDto.Response> getUserInfo(@PathVariable String userId){
+        return ResponseEntity.ok(userService.findUserByUserId(userId));
+    }
+
 }

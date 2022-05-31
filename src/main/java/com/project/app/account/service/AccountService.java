@@ -18,16 +18,11 @@ public class AccountService {
 
     public AccountDto.Response findUser(Long id){
         Account user = userRepository.findById(id).orElseThrow(NullPointerException::new);
-
         return user.toResponse();
     }
 
-    public UserDetails findUserByUserId(String userId) {
-        UserDetail userDetail = new UserDetail();
+    public AccountDto.Response findUserByUserId(String userId) {
         Account user = userRepository.findByUserId(userId).orElseThrow(NullPointerException::new);
-
-        userDetail.setUsername(user.getUserId());
-
-        return userDetail;
+        return user.toResponse();
     }
 }

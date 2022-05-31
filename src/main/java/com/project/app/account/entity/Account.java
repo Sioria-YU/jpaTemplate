@@ -1,15 +1,14 @@
 package com.project.app.account.entity;
 
+import com.project.app.account.dto.AccountDto;
 import com.project.app.account.resource.AccountMapper;
 import com.project.common.DefaultJpaIdWithDate;
-import com.project.app.account.dto.AccountDto;
 import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.UniqueConstraint;
 
 @Getter
 @Entity
