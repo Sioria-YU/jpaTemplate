@@ -53,6 +53,6 @@ public class Account extends DefaultJpaIdWithDate {
     private Boolean authType;
 
     public AccountDto.Response toResponse(){
-        return AccountMapper.mapper.toDto(this);
+        return AccountMapper.mapper.entityToResponse(this);
     }
 }

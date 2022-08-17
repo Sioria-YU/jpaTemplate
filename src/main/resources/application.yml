@@ -41,4 +41,5 @@ spring:
 server:
     port: 8080
 jwt:
-    secret: eyJhbGciOiJIUzUxMiJ9.eyJSb2xlIjoiUk9MRV9BRE1JTiIsIklzc3VlciI6Iklzc3VlciIsIlVzZXJuYW1lIjoiYWRtaW4iLCJleHAiOjE2NTEyOTcyNTgsImlhdCI6MTY1MTI5NzI1OH0.1ZecsIIq2bskKdrxGAZd4tRdpoSnhfyCK8tt4lzyt6imq7NyOwMenrwvxZzAREYqy7DcmX0G8ffkhAuIRRwg-w
+    #secret: dGVtcGxhdGVTZXJ2aWVjZVNlY3JldEtleQ==
+    secret: c3ByaW5nLWJvb3Qtc2VjdXJpdHktand0LXR1dG9yaWFsLWppd29vbi1zcHJpbmctYm9vdC1zZWN1cml0eS1qd3QtdHV0b3JpYWwK
