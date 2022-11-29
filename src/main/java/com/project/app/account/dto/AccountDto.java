@@ -10,10 +10,30 @@ public class AccountDto {
     @AllArgsConstructor
     @NoArgsConstructor
     @Data
-    public static class Reuqest {
+    public static class Request {
         String userId;
+
         String password;
 
+        String name;
+
+        Boolean gender;
+
+        String tell;
+
+        String email;
+
+        String zip;
+
+        String address;
+
+        String addressDetail;
+
+        Boolean status;
+
+        Boolean isDelete;
+
+        Boolean authType;
 
         public UsernamePasswordAuthenticationToken toAuthentication() {
             return new UsernamePasswordAuthenticationToken(userId, password);
@@ -25,60 +45,6 @@ public class AccountDto {
         String userId;
 
 //        String password;
-
-        String name;
-
-        Boolean gender;
-
-        String tell;
-
-        String email;
-
-        String zip;
-
-        String address;
-
-        String addressDetail;
-
-        Boolean status;
-
-        Boolean isDelete;
-
-        Boolean authType;
-    }
-
-    @Data
-    public static class Create {
-        String userId;
-
-        String password;
-
-        String name;
-
-        Boolean gender;
-
-        String tell;
-
-        String email;
-
-        String zip;
-
-        String address;
-
-        String addressDetail;
-
-        Boolean status;
-
-        Boolean isDelete;
-
-        Boolean authType;
-    }
-
-    @Data
-    public static class Update {
-        String userId;
-
-        String password;
 
         String name;
 

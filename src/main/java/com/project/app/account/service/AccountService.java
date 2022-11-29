@@ -2,10 +2,8 @@ package com.project.app.account.service;
 
 import com.project.app.account.dto.AccountDto;
 import com.project.app.account.entity.Account;
-import com.project.app.account.entity.UserDetail;
 import com.project.app.account.resource.AccountRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

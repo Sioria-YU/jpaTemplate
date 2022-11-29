@@ -1,6 +1,8 @@
 package com.project.common;
 
-public interface EntityMapper<D, E> {
-    E toEntity(final D dto);
-    D toDto(final E entity);
+import java.util.Optional;
+
+public interface EntityMapper<Entity, Request, Reponse> {
+    Reponse toResponse(final Entity entity);
+    Entity toEntity(final Request dto);
 }
