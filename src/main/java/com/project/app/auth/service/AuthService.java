@@ -28,20 +28,20 @@ public class AuthService {
     private final RefreshTokenRepository refreshTokenRepository;
 
     @Transactional(readOnly = true)
-    public AccountDto.Response signup(AccountDto.Create accountDto) {
+    public AccountDto.Response signup(AccountDto.Request accountDto) {
         if (accountRepository.existsByUserId(accountDto.getUserId())) {
             throw new RuntimeException("이미 가입되어 있는 유저입니다");
         }
 
         accountDto.setPassword(passwordEncoder.encode(accountDto.getPassword()));
 
-        Account account = AccountMapper.mapper.createdToEntity(accountDto);
+        Account account = AccountMapper.mapper.toEntity(accountDto);
         accountRepository.save(account);
         return account.toResponse();
     }
 
     @Transactional(readOnly = true)
-    public TokenDto login(AccountDto.Reuqest accountDto) {
+    public TokenDto login(AccountDto.Request accountDto) {
         // 1. Login ID/PW 를 기반으로 AuthenticationToken 생성
         UsernamePasswordAuthenticationToken authenticationToken = accountDto.toAuthentication();
 

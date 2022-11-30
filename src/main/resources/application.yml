@@ -25,7 +25,7 @@ spring:
         active: local
     datasource:
         driver-class-name: org.postgresql.Driver
-        url: jdbc:postgresql://localhost:3306/testdb
+        url: jdbc:postgresql://localhost:5432/testdb
         username: testdb
         password: testdb1234!@
     jpa:
