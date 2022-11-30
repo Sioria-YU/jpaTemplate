@@ -1,7 +1,7 @@
 package com.project.common;
 
-import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -12,7 +12,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@Data
+@Getter
+@Setter
 @EntityListeners(AuditingEntityListener.class)
 public class DefaultJpaIdWithDate {
 

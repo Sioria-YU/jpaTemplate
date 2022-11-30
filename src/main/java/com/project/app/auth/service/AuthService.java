@@ -17,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -27,22 +29,30 @@ public class AuthService {
     private final JwtAuthenticationProvider tokenProvider;
     private final RefreshTokenRepository refreshTokenRepository;
 
-    @Transactional(readOnly = true)
+    @Transactional
     public AccountDto.Response signup(AccountDto.Request accountDto) {
         if (accountRepository.existsByUserId(accountDto.getUserId())) {
             throw new RuntimeException("이미 가입되어 있는 유저입니다");
         }
 
-        accountDto.setPassword(passwordEncoder.encode(accountDto.getPassword()));
+        String password = passwordEncoder.encode(accountDto.getPassword());
+        accountDto.setPassword(password);
 
         Account account = AccountMapper.mapper.toEntity(accountDto);
         accountRepository.save(account);
         return account.toResponse();
     }
 
-    @Transactional(readOnly = true)
-    public TokenDto login(AccountDto.Request accountDto) {
+    @Transactional
+    public TokenDto login(AccountDto.Request accountDto) throws Exception{
         // 1. Login ID/PW 를 기반으로 AuthenticationToken 생성
+//        Account account = accountRepository.findByUserId(accountDto.getUserId()).orElseThrow(NullPointerException::new);
+//        if(passwordEncoder.matches(accountDto.getPassword(), account.getPassword())){
+//            accountDto.setPassword(account.getPassword());
+//            System.out.println("accountDto.getPassword : account.getPassword :::::::::::::>>> " + accountDto.getPassword() + " : " + account.getPassword());
+//        }
+
+//        accountDto.setPassword(passwordEncoder.encode(accountDto.getPassword()));
         UsernamePasswordAuthenticationToken authenticationToken = accountDto.toAuthentication();
 
         // 2. 실제로 검증 (사용자 비밀번호 체크) 이 이루어지는 부분
@@ -64,7 +74,7 @@ public class AuthService {
         return tokenDto;
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public TokenDto reissue(TokenRequestDto tokenRequestDto) {
         // 1. Refresh Token 검증
         if (!tokenProvider.validateToken(tokenRequestDto.getRefreshToken())) {

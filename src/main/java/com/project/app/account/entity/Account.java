@@ -6,11 +6,13 @@ import com.project.common.DefaultJpaIdWithDate;
 import com.sun.istack.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Getter
+@Setter
 @Entity
 public class Account extends DefaultJpaIdWithDate {
 

@@ -53,6 +53,8 @@ public class AccountDto {
         }
     }
 
+    @AllArgsConstructor
+    @NoArgsConstructor
     @Data
     public static class Response {
         @ApiModelProperty(value = "아이디")
